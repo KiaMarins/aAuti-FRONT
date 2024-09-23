@@ -1,0 +1,48 @@
+# Templates
+
+## Botão
+
+      <TouchableOpacity onPress={press}>
+        <Text style={[selectedText]}>Olá mundo</Text>
+      </TouchableOpacity>
+
+## Texto
+
+    <Text style={[text]}>Olá mundo</Text>
+
+## Input
+
+    <TextInput
+      placeholder="Olá mundo"
+      style={[styles.input, style]}
+      keyboardType={key}
+    />
+
+## Base do style.css
+
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  coisa1: {
+
+  },
+  
+});
+
+## Base do index.js
+
+import { React } from 'react';
+import styles from './styles';
+import { Text, TouchableOpacity, View, onPress } from 'react-native';
+
+export default function App() {
+
+  return (
+    <View>
+     
+    </View>
+  );
+}
+
+
+# Base para uma rota
