@@ -1,3 +1,11 @@
+.env API_
+
+import axios from 'axios';
+import { API_URL } from '@env';
+const ant = axios.create
+baseURL: API_URL,
+export default api;
+
 # Templates
 
 ## Botão
