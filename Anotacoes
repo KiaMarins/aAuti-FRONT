@@ -1,4 +1,4 @@
-.env API_
+.env API_URL=http://localhost:3000/
 
 import axios from 'axios';
 import { API_URL } from '@env';
