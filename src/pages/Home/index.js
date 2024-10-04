@@ -1,12 +1,18 @@
-import { React } from 'react';
-import styles from './styles';
-import { Text, TouchableOpacity, View, onPress } from 'react-native';
+import { View, Text } from 'react-native';
+import { useState} from 'react';
 
-export default function () {
+export default function Register() {
+  const [name, setName] = useState();
+  function inserirRegistro(){
+
+  }
 
   return (
-    <View style={styles.container}>
-     
-    </View>
+   <View>
+      < TouchableOpacity
+       onPress={inserirRegistro}>
+        <Text>Inserir</Text>
+      </TouchableOpacity>
+  </View>
   );
 }

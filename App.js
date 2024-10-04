@@ -1,20 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './src/pages/Home';
+import Login from './src/pages/Login';
+import Register from './src/pages/Register';
 
+const Stack = createStackNavigator();
 export default function App() {
-   //requisição da API, mas não deve estar funcionando
-   const fetchData = async () => {
-    try {
-      const response = await fetch('NÃO SEI O HTTP DA API'); // colocar o link certo
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
-    <View>
-     
-    </View>
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName='Register'>
+        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Register" component={Register}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
+}
