@@ -1,18 +1,7 @@
 import { View, Text } from 'react-native';
-import { useState} from 'react';
 
-export default function Register() {
-  const [name, setName] = useState();
-  function inserirRegistro(){
-
-  }
-
+export default function Login() {
   return (
-   <View>
-      < TouchableOpacity
-       onPress={inserirRegistro}>
-        <Text>Inserir</Text>
-      </TouchableOpacity>
-  </View>
+    <View></View>
   );
 }

@@ -1,60 +1,58 @@
-//register index
-import { View, Text } from 'react-native';
-import { useState} from 'react';
-import apiAuth from '../../services/apiAuth'; // conxao com a api
+import { View, TouchableOpacity, Text, TextInput } from 'react-native';
+import { useState } from 'react';
+import apiAuth from '../../services/apiAuth';
 
 export default function Register() {
+
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   async function inserirRegistro(){
     try{
-      const res = await apiAuth.post('users', 
-      {
-        "name": name,
-        "email": email,
-        "password": password
-      })
 
+      const res = await apiAuth.post('users', 
+                  {
+                    "name": name,
+                    "email": email,
+                    "password": password
+                  });
+      
       console.log(res.data);
 
     }catch(error){
-      console.log("Erro: " + error.messege);
+      console.log("Erro: "+ error.message);
     }
-     
   }
- 
+
   return (
-    <View>
-      <Text>Insira seu nome:</Text>
-      <TextInput
+    <View style={{ padding: 16 }}>
+    <TextInput
         placeholder="Nome"
         value={name}
-        onChangeText={(text) => setName(text)}
+        onChangeText={setName}
+        style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
-
-      <Text>Insira seu email:</Text>
       <TextInput
         placeholder="Email"
         value={email}
-        onChangeText={(text) => setEmail(text)}
+        onChangeText={setEmail}
         keyboardType="email-address"
+        style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
-
-      <Text>Insira sua senha:</Text>
       <TextInput
         placeholder="Senha"
         value={password}
-        onChangeText={(text) => setPassword(text)}
-        secureTextEntry={true}
+        onChangeText={setPassword}
+        secureTextEntry
+        style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
 
-      
-      <TouchableOpacity
-        onPress={inserirRegistro}>
-        <Text>Inserir</Text>
-      </TouchableOpacity>
+
+        <TouchableOpacity
+         onPress={inserirRegistro}>
+          <Text>Inserir</Text>
+        </TouchableOpacity>
     </View>
   );
 }
