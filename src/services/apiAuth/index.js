@@ -6,3 +6,5 @@ const api = axios.create({
 });
 
 export default api;
+
+//API_URL=http://localhost:3000 no .env
