@@ -4,9 +4,9 @@ import apiAuth from '../../services/apiAuth';
 
 export default function Register() {
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   async function inserirRegistro(){
     try{
@@ -30,20 +30,20 @@ export default function Register() {
     <TextInput
         placeholder="Nome"
         value={name}
-        onChangeText={setName}
+        onChangeText={(text)=>setName(text)}
         style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
       <TextInput
         placeholder="Email"
         value={email}
-        onChangeText={setEmail}
+        onChangeText={(text)=>setEmail(text)}
         keyboardType="email-address"
         style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
       <TextInput
         placeholder="Senha"
         value={password}
-        onChangeText={setPassword}
+        onChangeText={(text)=>setPassword(text)}
         secureTextEntry
         style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
       />
